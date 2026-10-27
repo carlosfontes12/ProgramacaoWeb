@@ -1,0 +1,41 @@
+* {
+    background-color: bisque;
+    margin: 20px;
+    font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+}
+
+.header{
+   text-align: center;
+   
+}
+
+.footer{
+   text-align: center;
+   background-color: grey ;
+   padding: 5px;
+   margin: 10px;    
+}   
+
+.nav{
+   background-color: grey ;
+   padding: 5px;
+   margin: 10px; 
+  }  
+
+  .nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+  } 
+
+.ImagemHeader{
+    width: 50%;   /* A imagem ocupará exatamente metade da largura do .cabecalho */
+    height: auto;
+    image-rendering: auto;
+    margin: 0 auto; /* centraliza a imagem horizontalmente */
+}
+
+.paragrafo{
+    text-align: justify;
+  
+}

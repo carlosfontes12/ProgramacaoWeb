@@ -1,0 +1,49 @@
+body {
+    background-color: lightgrey;
+    padding: 20px;
+    text-align: center;
+}
+
+
+h1, h2, h3, p {
+    text-align: center;
+}
+
+#alinhaEsquerda {
+    text-align: left;
+}
+
+#alinhaDireita {
+    text-align: right;
+}
+
+header h1 {
+    color: red;
+}
+
+main h1 {
+    color: blue;
+}
+
+.vermelho {
+    color: red;
+    background-color: lightseagreen;
+    border: 2px solid black;
+}
+
+.azul {
+    color: blue;
+}           
+
+.verde {
+    color: green;
+}
+
+.minha-div {
+  background-image: url("ProgramacaoWeb/Pl03/fotos/1.jpg");
+  background-size: cover;          /* Ajusta a imagem para cobrir toda a div */
+  background-position: center;     /* Centraliza a imagem */
+  background-repeat: no-repeat;    /* Evita que a imagem se repita */
+  width: 100%;                     /* Defina a largura */
+  height: 300px;                   /* É obrigatório definir uma altura para a div aparecer */
+}
