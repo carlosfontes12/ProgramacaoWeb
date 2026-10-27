@@ -1,0 +1,51 @@
+
+    Body {
+        background-image: url('/Pl05/imagens/fundo.avif');
+        background-size: cover;
+        background-repeat: no-repeat;   
+        background-attachment: fixed;
+        }
+
+    body h1 {
+        text-align: center;
+        color: rgb(3, 0, 0);
+        font-size: 10 px;
+        font-family: Arial, sans-serif;
+        opacity: 0.8;
+    }
+
+    body a {
+       text-decoration: none; /* Remove sublinhado */
+        color: #007BFF;        /* Cor azul */
+        font-size: 18px;
+        padding: 8px 12px;
+        display: inline-block;
+        }
+
+        .menu-principal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 24px;
+        }
+
+        .redes,
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            justify-content: flex-end;
+        }
+
+        .redes a,
+        .nav a {
+            padding: 8px;
+            line-height: 0;
+        }
