@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d1148;
+    background-color: #f7f7f9;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+header {
+    background-color: white;
+    padding: 10px 0;
+}
+
+.barra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e40084;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1d1148;
+}
+
+nav a:hover {
+    color: #e40084;
+}
+
+.destaque {
+    background-color: #1d1148;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.botao,
+button {
+    display: inline-block;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 40px;
+    background-color: #e40084;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao:hover,
+button:hover {
+    background-color: #b8006a;
+}
+
+section.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.lista-cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.cartao {
+    position: relative;
+    box-sizing: border-box;
+    width: 300px;
+    padding: 16px;
+    border: 3px solid #1d1148;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.cartao img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.cartao h3 {
+    margin: 10px 0 0;
+}
+
+.cartao p {
+    margin: 4px 0 0;
+}
+
+.selo {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 2px 12px;
+    border-radius: 20px;
+    background-color: #e40084;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    padding: 10px 14px;
+    text-align: left;
+    border: 1px solid #dcdce6;
+}
+
+th {
+    background-color: #1d1148;
+    color: white;
+}
+
+form {
+    max-width: 500px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #b5b3c4;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    
+}
+
+#nome,
+#email,
+#animal {
+    height: 44px;
+}
+
+#animal {
+    background-color: #efeff4;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 20px 16px;
+    background-color: #1d1148;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
