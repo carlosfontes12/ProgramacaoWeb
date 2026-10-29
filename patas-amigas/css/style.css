@@ -1,3 +1,4 @@
+/* Tipografia, cores base e espaçamento geral da página */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -6,17 +7,20 @@ body {
     line-height: 1.6;
 }
 
+/* Centra o conteúdo e limita a sua largura em ecrãs maiores */
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 16px;
 }
 
+/* Barra superior com o nome da associação e os links de navegação */
 header {
     background-color: white;
     padding: 10px 0;
 }
 
+/* Alinha o logótipo e a navegação; permite que passem para outra linha */
 .barra {
     display: flex;
     flex-wrap: wrap;
@@ -35,6 +39,7 @@ header {
     color: #e40084;
 }
 
+/* Apresenta os links de navegação em linha e sem marcadores */
 nav ul {
     list-style: none;
     margin: 0;
@@ -53,6 +58,7 @@ nav a:hover {
     color: #e40084;
 }
 
+/* Secção de apresentação com fundo escuro e texto centrado */
 .destaque {
     background-color: #1d1148;
     color: white;
@@ -60,6 +66,7 @@ nav a:hover {
     padding: 60px 0;
 }
 
+/* Estilo partilhado pelo link de chamada à ação e pelo botão do formulário */
 .botao,
 button {
     display: inline-block;
@@ -74,16 +81,19 @@ button {
     cursor: pointer;
 }
 
+/* Escurece os botões quando o utilizador passa o cursor sobre eles */
 .botao:hover,
 button:hover {
     background-color: #b8006a;
 }
 
+/* Espaçamento vertical das secções principais */
 section.container {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+/* Organiza os cartões dos animais em linhas centradas, com espaçamento */
 .lista-cartoes {
     display: flex;
     flex-wrap: wrap;
@@ -91,6 +101,7 @@ section.container {
     gap: 24px;
 }
 
+/* Cartão individual: moldura, fundo, sombra e posicionamento do selo */
 .cartao {
     position: relative;
     box-sizing: border-box;
@@ -103,6 +114,7 @@ section.container {
     text-align: center;
 }
 
+/* Imagem ajustada à largura do cartão, mantendo as proporções */
 .cartao img {
     display: block;
     width: 100%;
@@ -110,6 +122,7 @@ section.container {
     border-radius: 12px;
 }
 
+/* Espaçamento dos nomes e descrições dos animais */
 .cartao h3 {
     margin: 10px 0 0;
 }
@@ -118,6 +131,7 @@ section.container {
     margin: 4px 0 0;
 }
 
+/* Selo "Novo" sobreposto no canto superior direito do cartão */
 .selo {
     position: absolute;
     top: 8px;
@@ -130,6 +144,7 @@ section.container {
     font-weight: bold;
 }
 
+/* Tabela de horários: ocupa o espaço disponível até ao limite definido */
 table {
     width: 100%;
     max-width: 500px;
@@ -137,6 +152,7 @@ table {
     background-color: white;
 }
 
+/* Espaçamento, alinhamento e contorno das células da tabela */
 th,
 td {
     padding: 10px 14px;
@@ -144,11 +160,13 @@ td {
     border: 1px solid #dcdce6;
 }
 
+/* Cabeçalho da tabela com as cores principais do site */
 th {
     background-color: #1d1148;
     color: white;
 }
 
+/* Caixa do formulário com largura limitada, fundo branco e sombra */
 form {
     max-width: 500px;
     padding: 24px;
@@ -157,12 +175,14 @@ form {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Rótulos apresentados acima dos respetivos campos */
 label {
     display: block;
     margin-bottom: 6px;
     font-weight: bold;
 }
 
+/* Campos do formulário com largura consistente e tipografia herdada */
 input,
 select,
 textarea {
@@ -177,16 +197,19 @@ textarea {
     
 }
 
+/* Altura uniforme para os campos de texto e a lista de animais */
 #nome,
 #email,
 #animal {
     height: 44px;
 }
 
+/* Diferencia visualmente a lista de seleção do formulário */
 #animal {
     background-color: #efeff4;
 }
 
+/* Rodapé com as cores principais do site e texto centrado */
 footer {
     margin-top: 30px;
     padding: 20px 16px;
