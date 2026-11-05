@@ -6,69 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cesae Viagens</title>
 
-    <!-- CSS do Bootstrap: todo o aspeto da página vem daqui, através das classes no HTML -->
-    <!-- (Não usamos CSS próprio. Se um dia for preciso, o <link> para o nosso ficheiro -->
-    <!--  deve ficar DEPOIS desta linha, para conseguir alterar os estilos do Bootstrap.) -->
+    <!-- Liguei o CSS do Bootstrap. O aspeto da página todo vem das classes do Bootstrap -->
+    <!-- Não fiz CSS meu. Se precisar, tenho de pôr o meu <link> depois deste para conseguir alterar o Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Liguei o Bootstrap Icons para ter os ícones do rodapé (envelope e redes sociais) -->
+    <!-- Para usar um ícone escrevo <i class="bi bi-nome-do-icone"></i> -->
+    <!-- Os nomes dos ícones estão em https://icons.getbootstrap.com -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ===================================================== -->
-    <!-- CABEÇALHO: contém o menu (navbar) e a zona de destaque -->
-    <!-- bg-dark = fundo escuro | text-white = texto branco      -->
-    <!-- ===================================================== -->
+    <!-- ========== CABEÇALHO (menu + zona de destaque) ========== -->
+    <!-- bg-dark: fundo escuro -->
+    <!-- text-white: texto branco -->
     <header class="bg-dark text-white">
 
-        <!-- ================= MENU DE NAVEGAÇÃO ================= -->
-        <!-- navbar               = componente de menu do Bootstrap -->
-        <!-- navbar-expand-lg     = links em linha nos ecrãs grandes; nos pequenos ficam escondidos no botão ☰ -->
-        <!-- data-bs-theme="dark" = cores próprias para fundo escuro (links claros, dropdown escuro) -->
+        <!-- ===== MENU ===== -->
+        <!-- navbar: menu do Bootstrap -->
+        <!-- navbar-expand-lg: em ecrãs grandes os links aparecem em linha, nos pequenos ficam dentro do botão  -->
+        <!-- data-bs-theme="dark": usa as cores para fundo escuro (links claros e dropdown escuro) -->
         <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
 
-            <!-- container = centra o conteúdo e dá margens laterais (por isso nada encosta às bordas) -->
+            <!-- container: centra o conteúdo e deixa margem dos lados -->
             <div class="container">
 
-                <!-- navbar-brand = zona do logótipo/nome da empresa -->
-                <!-- d-flex align-items-center = põe a imagem e o texto lado a lado, alinhados ao centro -->
-                <!-- gap-2 = pequeno espaço entre a imagem e o texto -->
-                <!-- fw-bold = negrito (substitui o <strong>) -->
+                <!-- Logótipo e nome da empresa -->
+                <!-- navbar-brand: estilo do Bootstrap para o logótipo do menu -->
+                <!-- d-flex: põe a imagem e o texto lado a lado -->
+                <!-- align-items-center: alinha a imagem e o texto ao meio (na vertical) -->
+                <!-- gap-2: espaço entre a imagem e o texto -->
+                <!-- fw-bold: texto em negrito -->
                 <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
                     <img src="../img/aviao-01.png" width="25" alt="Logótipo CESAE Viagens">
                     CESAE Viagens
                 </a>
 
-                <!-- Botão ☰ (hambúrguer): só aparece em ecrãs pequenos -->
-                <!-- data-bs-toggle="collapse" = abre/fecha o menu -->
-                <!-- data-bs-target="#menuPrincipal" = diz QUAL elemento abre/fecha (o id mais abaixo) -->
+                <!-- Botão  que só aparece em ecrãs pequenos -->
+                <!-- navbar-toggler: estilo do botão  -->
+                <!-- data-bs-toggle="collapse": ao clicar abre e fecha o menu -->
+                <!-- data-bs-target="#menuPrincipal": diz qual é o menu que abre (o que tem id="menuPrincipal") -->
+                <!-- aria-label: nome do botão para os leitores de ecrã -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
                     aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+                    <!-- navbar-toggler-icon: desenha as 3 risquinhas do botão  -->
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- collapse navbar-collapse = parte do menu que esconde/mostra nos ecrãs pequenos -->
+                <!-- collapse navbar-collapse: esta parte fica escondida nos ecrãs pequenos até clicar no  -->
                 <div class="collapse navbar-collapse" id="menuPrincipal">
 
-                    <!-- navbar-nav = lista de links do menu -->
-                    <!-- small = letra mais pequena, como na imagem -->
+                    <!-- navbar-nav: lista dos links do menu -->
+                    <!-- small: letra mais pequena -->
                     <ul class="navbar-nav small">
 
-                        <!-- active = destaca o link da página atual (fica branco) -->
-                        <!-- aria-current="page" = indica aos leitores de ecrã que esta é a página atual -->
+                        <!-- nav-item: cada item do menu -->
+                        <!-- nav-link: estilo de cada link -->
+                        <!-- active: o link da página onde estou fica destacado (branco) -->
+                        <!-- aria-current="page": diz aos leitores de ecrã que esta é a página atual -->
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Início</a>
                         </li>
 
-                        <!-- dropdown = item com submenu -->
+                        <!-- dropdown: item que tem um submenu -->
                         <li class="nav-item dropdown">
-                            <!-- dropdown-toggle = acrescenta a setinha ▾ -->
-                            <!-- data-bs-toggle="dropdown" = abre o submenu ao clicar (precisa do JS do Bootstrap) -->
+                            <!-- dropdown-toggle: põe a setinha  ao lado do texto -->
+                            <!-- data-bs-toggle="dropdown": abre o submenu quando clico -->
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Destinos
                             </a>
-                            <!-- dropdown-menu = a caixa do submenu -->
+                            <!-- dropdown-menu: a caixa do submenu -->
+                            <!-- dropdown-item: cada opção do submenu -->
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Porto</a></li>
                                 <li><a class="dropdown-item" href="#">Lisboa</a></li>
@@ -88,78 +99,85 @@
                         </li>
                     </ul>
 
-                    <!-- ms-auto = margin-start automática: "empurra" o botão para a DIREITA -->
-                    <!-- btn btn-warning = botão amarelo | btn-sm = botão pequeno -->
+                    <!-- Botão Reservar -->
+                    <!-- btn: transforma o link num botão -->
+                    <!-- btn-warning: botão amarelo -->
+                    <!-- btn-sm: botão pequeno -->
+                    <!-- ms-auto: margem automática à esquerda, empurra o botão para a direita -->
                     <a href="#" class="btn btn-warning btn-sm ms-auto">Reservar</a>
                 </div>
             </div>
         </nav>
 
-        <!-- ================= ZONA DE DESTAQUE (HERO) ================= -->
-        <!-- container = centra o conteúdo -->
-        <!-- text-center = centra o texto e os botões -->
-        <!-- py-5 = espaço (padding) em cima e em baixo — substitui os <br> -->
+        <!-- ===== ZONA DE DESTAQUE ===== -->
+        <!-- container: centra o conteúdo -->
+        <!-- text-center: centra o texto e os botões -->
+        <!-- py-5: espaço em cima e em baixo (em vez de usar <br>) -->
         <section class="container text-center py-5">
 
-            <!-- fw-bold = negrito | mb-2 = pequena margem em baixo -->
+            <!-- fw-bold: negrito -->
+            <!-- mb-2: margem pequena em baixo -->
             <h1 class="fw-bold mb-2">Descubra o mundo com a CESAE Viagens</h1>
 
-            <!-- small = letra mais pequena | mb-3 = margem em baixo, antes dos botões -->
+            <!-- small: letra mais pequena -->
+            <!-- mb-3: margem em baixo para afastar dos botões -->
             <p class="small mb-3">Viagens à medida, com apoio em português do primeiro ao último dia.</p>
 
-            <!-- Botão amarelo cheio -->
+            <!-- btn btn-warning: botão amarelo -->
             <a href="#" class="btn btn-warning">Ver planos</a>
 
-            <!-- btn-outline-light = botão só com contorno claro (fundo transparente) -->
+            <!-- btn-outline-light: botão só com o contorno branco e fundo transparente -->
             <a href="#" class="btn btn-outline-light">Ver destinos</a>
         </section>
 
     </header>
 
-    <!-- ================= PORQUÊ A CESAE VIAGENS (VANTAGENS) ================= -->
-    <!-- container   = centra o conteúdo e dá margens laterais -->
-    <!-- text-center = centra o título, os ícones e os textos -->
-    <!-- py-5        = espaço em cima e em baixo da secção -->
+    <!-- ========== PORQUÊ A CESAE VIAGENS ========== -->
+    <!-- container: centra o conteúdo e deixa margem dos lados -->
+    <!-- text-center: centra o título, os ícones e os textos -->
+    <!-- py-5: espaço em cima e em baixo -->
     <section class="container text-center py-5">
 
-        <!-- fs-4 = letra mais pequena do que um h2 normal (como na imagem) -->
-        <!-- mb-4 = margem em baixo, para separar o título das colunas -->
+        <!-- fs-4: tamanho de letra mais pequeno do que o normal de um h2 -->
+        <!-- mb-4: margem em baixo para afastar das colunas -->
         <h2 class="fs-4 mb-4">Porquê a CESAE Viagens?</h2>
 
-        <!-- row = linha da grelha: põe as colunas LADO A LADO -->
-        <!-- justify-content-center = centra as colunas dentro da linha -->
-        <!-- g-4 = espaço (gutter) entre as colunas -->
+        <!-- row: linha da grelha, põe as colunas lado a lado -->
+        <!-- justify-content-center: centra as colunas na linha -->
+        <!-- g-4: espaço entre as colunas -->
         <div class="row justify-content-center g-4">
 
-            <!-- ---------- VANTAGEM 1 ---------- -->
-            <!-- A grelha do Bootstrap tem 12 partes: -->
-            <!-- col-md-4 = em ecrãs médios ocupa 4 de 12 partes → 3 colunas por linha -->
-            <!-- col-lg-3 = em ecrãs grandes ocupa 3 de 12 partes → colunas mais estreitas, como na imagem -->
-            <!-- Em telemóvel cada coluna ocupa a largura toda → ficam umas por baixo das outras -->
+            <!-- Vantagem 1 -->
+            <!-- A grelha do Bootstrap está dividida em 12 partes -->
+            <!-- col-md-4: em ecrãs médios cada coluna ocupa 4 partes, ficam 3 por linha -->
+            <!-- col-lg-3: em ecrãs grandes cada coluna ocupa 3 partes, ficam mais estreitas -->
+            <!-- Em telemóvel cada coluna ocupa a largura toda e ficam umas por baixo das outras -->
             <div class="col-md-4 col-lg-3">
 
-                <!-- Círculo azul do ícone: -->
-                <!-- d-inline-block    = o círculo fica só do tamanho do ícone (e não da largura toda) -->
-                <!-- rounded-circle    = forma de círculo -->
-                <!-- bg-primary-subtle = fundo azul claro -->
-                <!-- p-2               = espaço à volta do ícone, dentro do círculo -->
-                <!-- mb-2              = margem em baixo, antes do título -->
+                <!-- Círculo azul à volta do ícone -->
+                <!-- d-inline-block: o círculo fica só do tamanho do ícone -->
+                <!-- rounded-circle: forma redonda -->
+                <!-- bg-primary-subtle: fundo azul clarinho -->
+                <!-- p-2: espaço entre o ícone e a borda do círculo -->
+                <!-- mb-2: margem em baixo para afastar do título -->
                 <div class="d-inline-block rounded-circle bg-primary-subtle p-2 mb-2">
-                    <!-- width="20" = ícone pequeno -->
-                    <!-- alt="" = ícone só decorativo (o título já diz o que é), por isso o alt fica vazio -->
+                    <!-- width="20": tamanho do ícone -->
+                    <!-- alt="": deixei vazio porque o ícone é só decorativo, o título já explica -->
                     <img src="../img/localização.svg" width="20" alt="">
                 </div>
 
-                <!-- h3 = subtítulo (depois de um h2 vem um h3: hierarquia correta dos títulos) -->
-                <!-- fs-6 = letra pequena | mb-1 = margem curta em baixo -->
+                <!-- Usei h3 porque está dentro de uma secção com h2 -->
+                <!-- fs-6: letra pequena -->
+                <!-- mb-1: margem pequena em baixo -->
                 <h3 class="fs-6 mb-1">Destinos à medida</h3>
 
-                <!-- small = letra mais pequena | text-body-secondary = cor cinzenta -->
+                <!-- small: letra mais pequena -->
+                <!-- text-body-secondary: texto cinzento -->
                 <p class="small text-body-secondary">Escolhemos o roteiro consigo, do primeiro café ao último pôr do
                     sol.</p>
             </div>
 
-            <!-- ---------- VANTAGEM 2 (mesmas classes da vantagem 1) ---------- -->
+            <!-- Vantagem 2 (igual à vantagem 1) -->
             <div class="col-md-4 col-lg-3">
                 <div class="d-inline-block rounded-circle bg-primary-subtle p-2 mb-2">
                     <img src="../img/segurança.svg" width="20" alt="">
@@ -169,7 +187,7 @@
                     esteja.</p>
             </div>
 
-            <!-- ---------- VANTAGEM 3 (mesmas classes da vantagem 1) ---------- -->
+            <!-- Vantagem 3 (igual à vantagem 1) -->
             <div class="col-md-4 col-lg-3">
                 <div class="d-inline-block rounded-circle bg-primary-subtle p-2 mb-2">
                     <img src="../img/calendario.svg" width="20" alt="">
@@ -182,34 +200,42 @@
     </section>
 
 
-    <!-- ================= DESTINOS EM DESTAQUE (CARROSSEL) ================= -->
-    <!-- Esta section NÃO tem "container", para o fundo cinzento chegar às bordas do ecrã -->
-    <!-- bg-body-tertiary = fundo cinzento muito claro -->
-    <!-- py-5             = espaço em cima e em baixo -->
+    <!-- ========== DESTINOS EM DESTAQUE (CARROSSEL) ========== -->
+    <!-- Não pus container na section para o fundo cinzento ir até às bordas do ecrã -->
+    <!-- bg-body-tertiary: fundo cinzento clarinho -->
+    <!-- py-5: espaço em cima e em baixo -->
     <section class="bg-body-tertiary py-5">
 
-        <!-- O container fica DENTRO da section: centra o conteúdo, mas o fundo continua a toda a largura -->
+        <!-- container: centra o conteúdo, o fundo cinzento continua a toda a largura -->
         <div class="container">
 
-            <!-- text-center = título centrado | fs-4 = mesmo tamanho do título da secção anterior -->
+            <!-- text-center: centra o título -->
+            <!-- fs-4: mesmo tamanho dos outros títulos -->
+            <!-- mb-4: margem em baixo -->
             <h2 class="text-center fs-4 mb-4">Destinos em destaque</h2>
 
-            <!-- row + justify-content-center + col-lg-8 = carrossel centrado e mais estreito do que a página -->
+            <!-- row: linha da grelha -->
+            <!-- justify-content-center: centra a coluna -->
             <div class="row justify-content-center">
+                <!-- col-lg-8: em ecrãs grandes o carrossel ocupa 8 de 12 partes, fica mais estreito -->
                 <div class="col-lg-8">
 
-                    <!-- carousel slide     = o carrossel, com animação de deslizar -->
-                    <!-- id="..."           = nome único; as setas e os indicadores usam-no para saber QUAL carrossel controlam -->
-                    <!-- data-bs-ride="carousel" = começa a passar os slides sozinho, ao abrir a página -->
-                    <!-- rounded            = cantos arredondados -->
-                    <!-- shadow             = sombra à volta -->
-                    <!-- overflow-hidden    = corta a foto nos cantos redondos (senão os cantos da foto "saem" para fora) -->
+                    <!-- id="carrosselDestinos": nome do carrossel, as setas e os tracinhos usam este nome -->
+                    <!-- carousel: carrossel do Bootstrap -->
+                    <!-- slide: as imagens passam a deslizar -->
+                    <!-- rounded: cantos arredondados -->
+                    <!-- shadow: sombra à volta -->
+                    <!-- overflow-hidden: corta a imagem nos cantos para ficarem arredondados -->
+                    <!-- data-bs-ride="carousel": as imagens começam a passar sozinhas -->
                     <div id="carrosselDestinos" class="carousel slide rounded shadow overflow-hidden"
                         data-bs-ride="carousel">
 
-                        <!-- ---------- INDICADORES (os tracinhos ▬ em baixo) ---------- -->
-                        <!-- Um botão por slide. data-bs-slide-to = número do slide (começa no 0!) -->
-                        <!-- class="active" + aria-current="true" só no primeiro, porque é o que aparece ao abrir -->
+                        <!-- Tracinhos em baixo das imagens (um por imagem) -->
+                        <!-- carousel-indicators: estilo dos tracinhos -->
+                        <!-- data-bs-target: qual é o carrossel que controlam -->
+                        <!-- data-bs-slide-to: número da imagem (começa no 0) -->
+                        <!-- active e aria-current="true": só no primeiro, porque é a imagem que aparece primeiro -->
+                        <!-- aria-label: nome do tracinho para os leitores de ecrã -->
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carrosselDestinos" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Porto"></button>
@@ -225,95 +251,112 @@
                                 aria-label="Madeira"></button>
                         </div>
 
-                        <!-- ---------- SLIDES ---------- -->
-                        <!-- carousel-inner = a "caixa" que contém todos os slides -->
+                        <!-- carousel-inner: caixa onde estão as imagens todas -->
                         <div class="carousel-inner">
 
-                            <!-- SLIDE 0: PORTO -->
-                            <!-- carousel-item = um slide | active = o slide que aparece primeiro (SÓ UM pode ter active) -->
+                            <!-- Imagem 0: Porto -->
+                            <!-- carousel-item: cada imagem do carrossel -->
+                            <!-- active: é a imagem que aparece primeiro (só uma pode ter active) -->
                             <div class="carousel-item active">
-                                <!-- 🔁 PLACEHOLDER: troca o src por "../img/porto.jpg" quando tiveres a foto -->
-                                <!-- d-block = a imagem comporta-se como bloco (sem espaços estranhos por baixo) -->
-                                <!-- w-100   = a imagem ocupa 100% da largura do carrossel -->
-                                <img src="https://placehold.co/1200x500?text=Porto" class="d-block w-100"
-                                    alt="Vista do Porto">
+                                <!-- ratio: caixa que mantém sempre a mesma proporção, assim as imagens ficam todas do mesmo tamanho -->
+                                <!-- --bs-aspect-ratio: 53.33%: a altura é 53,33% da largura (800 a dividir por 1500) -->
+                                <div class="ratio" style="--bs-aspect-ratio: 53.33%;">
+                                    <!-- d-block: a imagem fica como bloco, assim não fica espaço por baixo -->
+                                    <!-- w-100: a imagem ocupa a largura toda -->
+                                    <!-- object-fit-cover: a imagem enche a caixa sem ficar deformada (corta o que sobra) -->
+                                    <img src="../img/Porto.jpg" class="d-block w-100 object-fit-cover"
+                                        alt="Ribeira do Porto iluminada à noite, com a Ponte da Arrábida ao fundo">
+                                </div>
 
-                                <!-- carousel-caption = legenda por cima da foto (centrada em baixo) -->
-                                <!-- d-none d-md-block = escondida em telemóvel (d-none), visível a partir de ecrãs médios (d-md-block) -->
+                                <!-- carousel-caption: legenda por cima da imagem -->
+                                <!-- d-none: esconde a legenda no telemóvel -->
+                                <!-- d-md-block: volta a mostrar a legenda a partir de ecrãs médios -->
                                 <div class="carousel-caption d-none d-md-block">
+                                    <!-- fs-5: tamanho da letra -->
+                                    <!-- fw-bold: negrito -->
                                     <h3 class="fs-5 fw-bold">Porto</h3>
-                                    <p class="small">Ribeira, caves de vinho do Porto e francesinhas.</p>
+                                    <!-- small: letra mais pequena -->
+                                    <p class="small">Ribeira à noite, o Douro e as luzes da cidade.</p>
                                 </div>
                             </div>
 
-                            <!-- SLIDE 1: LISBOA (mesma estrutura do slide 0, mas SEM "active") -->
+                            <!-- Imagem 1: Lisboa (igual à do Porto mas sem active) -->
                             <div class="carousel-item">
-                                <!-- 🔁 PLACEHOLDER: troca por "../img/lisboa.jpg" -->
-                                <img src="https://placehold.co/1200x500?text=Lisboa" class="d-block w-100"
-                                    alt="Elétrico em Lisboa">
+                                <div class="ratio" style="--bs-aspect-ratio: 53.33%;">
+                                    <img src="../img/Lisboa.jpeg" class="d-block w-100 object-fit-cover"
+                                        alt="Torre de Belém ao pôr do sol, junto ao rio Tejo">
+                                </div>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h3 class="fs-5 fw-bold">Lisboa</h3>
-                                    <p class="small">Elétricos, colinas, miradouros e pastéis de nata.</p>
+                                    <p class="small">Torre de Belém, o Tejo e pores do sol inesquecíveis.</p>
                                 </div>
                             </div>
 
-                            <!-- SLIDE 2: ALENTEJO -->
+                            <!-- Imagem 2: Alentejo -->
                             <div class="carousel-item">
-                                <!-- 🔁 PLACEHOLDER: troca por "../img/alentejo.jpg" -->
-                                <img src="https://placehold.co/1200x500?text=Alentejo" class="d-block w-100"
-                                    alt="Planície alentejana">
+                                <div class="ratio" style="--bs-aspect-ratio: 53.33%;">
+                                    <img src="../img/Alentejo.jpg" class="d-block w-100 object-fit-cover"
+                                        alt="Cromeleque dos Almendres sob um céu estrelado">
+                                </div>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h3 class="fs-5 fw-bold">Alentejo</h3>
-                                    <p class="small">Planícies douradas, vilas brancas e boa mesa.</p>
+                                    <p class="small">Monumentos milenares e céus estrelados únicos.</p>
                                 </div>
                             </div>
 
-                            <!-- SLIDE 3: ALGARVE -->
+                            <!-- Imagem 3: Algarve -->
                             <div class="carousel-item">
-                                <!-- 🔁 PLACEHOLDER: troca por "../img/algarve.jpg" -->
-                                <img src="https://placehold.co/1200x500?text=Algarve" class="d-block w-100"
-                                    alt="Praia no Algarve">
+                                <div class="ratio" style="--bs-aspect-ratio: 53.33%;">
+                                    <img src="../img/Algarve.jpg" class="d-block w-100 object-fit-cover"
+                                        alt="Interior da Gruta de Benagil, com mar azul-turquesa">
+                                </div>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h3 class="fs-5 fw-bold">Algarve</h3>
-                                    <p class="small">Praias, falésias e sol quase todo o ano.</p>
+                                    <p class="small">Grutas, falésias douradas e águas cristalinas.</p>
                                 </div>
                             </div>
 
-                            <!-- SLIDE 4: AÇORES -->
+                            <!-- Imagem 4: Açores -->
                             <div class="carousel-item">
-                                <!-- 🔁 PLACEHOLDER: troca por "../img/acores.jpg" (nome do ficheiro SEM acentos) -->
-                                <img src="https://placehold.co/1200x500?text=Acores" class="d-block w-100"
-                                    alt="Lagoa nos Açores">
+                                <div class="ratio" style="--bs-aspect-ratio: 53.33%;">
+                                    <img src="../img/Açores.jpg" class="d-block w-100 object-fit-cover"
+                                        alt="Montanha do Pico e uma lagoa rodeada de verde">
+                                </div>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h3 class="fs-5 fw-bold">Açores</h3>
-                                    <p class="small">Lagoas, vulcões e natureza em estado puro.</p>
+                                    <p class="small">A montanha do Pico, lagoas e natureza em estado puro.</p>
                                 </div>
                             </div>
 
-                            <!-- SLIDE 5: MADEIRA -->
+                            <!-- Imagem 5: Madeira -->
                             <div class="carousel-item">
-                                <!-- 🔁 PLACEHOLDER: troca por "../img/madeira.jpg" -->
-                                <img src="https://placehold.co/1200x500?text=Madeira" class="d-block w-100"
-                                    alt="Paisagem da Madeira">
+                                <div class="ratio" style="--bs-aspect-ratio: 53.33%;">
+                                    <img src="../img/Madeira.jpg" class="d-block w-100 object-fit-cover"
+                                        alt="Casas coloridas junto ao mar e montanhas verdes na Madeira">
+                                </div>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h3 class="fs-5 fw-bold">Madeira</h3>
-                                    <p class="small">Levadas, montanhas e flores durante todo o ano.</p>
+                                    <p class="small">Montanhas verdes, mar azul e aldeias à beira-mar.</p>
                                 </div>
                             </div>
 
                         </div> <!-- fim do carousel-inner -->
 
-                        <!-- ---------- SETAS ‹ › ---------- -->
-                        <!-- data-bs-target = qual carrossel controla (o id lá de cima, com #) -->
-                        <!-- data-bs-slide="prev" = slide anterior | "next" = slide seguinte -->
+                        <!-- Seta para a esquerda -->
+                        <!-- carousel-control-prev: botão para voltar à imagem anterior -->
+                        <!-- data-bs-target: qual é o carrossel que controla -->
+                        <!-- data-bs-slide="prev": vai para a imagem anterior -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#carrosselDestinos"
                             data-bs-slide="prev">
-                            <!-- carousel-control-prev-icon = desenha a seta ‹ -->
-                            <!-- aria-hidden="true" = os leitores de ecrã ignoram o desenho da seta -->
+                            <!-- carousel-control-prev-icon: desenha a seta ‹ -->
+                            <!-- aria-hidden="true": os leitores de ecrã ignoram a seta -->
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <!-- visually-hidden = texto invisível no ecrã, mas lido pelos leitores de ecrã -->
+                            <!-- visually-hidden: texto que não se vê mas é lido pelos leitores de ecrã -->
                             <span class="visually-hidden">Anterior</span>
                         </button>
+
+                        <!-- Seta para a direita (igual à da esquerda mas com next) -->
+                        <!-- data-bs-slide="next": vai para a imagem seguinte -->
                         <button class="carousel-control-next" type="button" data-bs-target="#carrosselDestinos"
                             data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -328,8 +371,475 @@
     </section>
 
 
-    <!-- JavaScript do Bootstrap: necessário para o dropdown e o botão ☰ funcionarem -->
-    <!-- Fica no fim do <body> para a página carregar primeiro o conteúdo -->
+    <!-- ========== OS NOSSOS PLANOS ========== -->
+    <!-- container: centra o conteúdo -->
+    <!-- text-center: centra os títulos, os preços e as listas -->
+    <!-- py-5: espaço em cima e em baixo -->
+    <section class="container text-center py-5">
+
+        <!-- fs-4: mesmo tamanho dos outros títulos -->
+        <!-- mb-4: margem em baixo para afastar dos cartões -->
+        <h2 class="fs-4 mb-4">Os nossos planos</h2>
+
+        <!-- Usei a mesma grelha da secção "Porquê a CESAE Viagens?" -->
+        <!-- row: põe os cartões lado a lado -->
+        <!-- justify-content-center: centra os cartões -->
+        <!-- g-4: espaço entre os cartões -->
+        <div class="row justify-content-center g-4">
+
+            <!-- Plano 1: Essencial -->
+            <!-- col-md-4 col-lg-3: 3 cartões por linha, no telemóvel ficam uns por baixo dos outros -->
+            <div class="col-md-4 col-lg-3">
+
+                <!-- card: cartão do Bootstrap (caixa com borda e cantos arredondados) -->
+                <!-- h-100: o cartão ocupa a altura toda, assim os 3 cartões ficam com a mesma altura -->
+                <!-- shadow-sm: sombra pequena -->
+                <div class="card h-100 shadow-sm">
+
+                    <!-- card-header: parte de cima do cartão, com o nome do plano -->
+                    <!-- small: letra mais pequena -->
+                    <div class="card-header small">Essencial</div>
+
+                    <!-- card-body: parte principal do cartão -->
+                    <!-- d-flex: ativa o flexbox -->
+                    <!-- flex-column: põe os elementos uns por baixo dos outros -->
+                    <!-- Precisei disto para o mt-auto do botão funcionar -->
+                    <div class="card-body d-flex flex-column">
+
+                        <!-- fs-3: letra grande para o preço -->
+                        <!-- fw-light: letra fina -->
+                        <!-- mb-0: tira a margem de baixo -->
+                        <p class="fs-3 fw-light mb-0">199 €</p>
+
+                        <!-- small: letra mais pequena -->
+                        <!-- text-body-secondary: texto cinzento -->
+                        <!-- mb-4: margem em baixo para afastar da lista -->
+                        <p class="small text-body-secondary mb-4">por pessoa</p>
+
+                        <!-- list-unstyled: tira as bolinhas e o espaço à esquerda da lista -->
+                        <!-- small: letra mais pequena -->
+                        <!-- mb-4: margem em baixo para afastar do botão -->
+                        <ul class="list-unstyled small mb-4">
+                            <!-- mb-1: espaço pequeno entre cada linha -->
+                            <li class="mb-1">Voos e alojamento</li>
+                            <li class="mb-1">Seguro de viagem</li>
+                            <li class="mb-1">Apoio por email</li>
+                        </ul>
+
+                        <!-- btn btn-outline-primary: botão azul só com contorno -->
+                        <!-- btn-sm: botão pequeno -->
+                        <!-- w-100: o botão ocupa a largura toda do cartão -->
+                        <!-- mt-auto: margem automática em cima, empurra o botão para o fundo do cartão -->
+                        <!-- Assim os 3 botões ficam alinhados mesmo com listas de tamanhos diferentes -->
+                        <a href="#" class="btn btn-outline-primary btn-sm w-100 mt-auto">Escolher</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plano 2: Família (é igual ao plano 1, mas tem 3 diferenças para ficar destacado) -->
+            <div class="col-md-4 col-lg-3">
+
+                <!-- Diferença 1 - border-primary: borda azul -->
+                <div class="card h-100 shadow-sm border-primary">
+
+                    <!-- Diferença 2 - bg-primary: fundo azul / text-white: texto branco -->
+                    <div class="card-header small bg-primary text-white">Família (mais popular)</div>
+
+                    <div class="card-body d-flex flex-column">
+                        <p class="fs-3 fw-light mb-0">349 €</p>
+                        <p class="small text-body-secondary mb-4">por pessoa</p>
+
+                        <ul class="list-unstyled small mb-4">
+                            <li class="mb-1">Tudo do Essencial</li>
+                            <li class="mb-1">Transfers incluídos</li>
+                            <li class="mb-1">Atividades para crianças</li>
+                            <li class="mb-1">Apoio 24 horas</li>
+                        </ul>
+
+                        <!-- Diferença 3 - btn-primary: botão azul cheio em vez de só contorno -->
+                        <a href="#" class="btn btn-primary btn-sm w-100 mt-auto">Escolher</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plano 3: Premium (igual ao plano 1) -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header small">Premium</div>
+
+                    <div class="card-body d-flex flex-column">
+                        <p class="fs-3 fw-light mb-0">599 €</p>
+                        <p class="small text-body-secondary mb-4">por pessoa</p>
+
+                        <ul class="list-unstyled small mb-4">
+                            <li class="mb-1">Tudo da Família</li>
+                            <li class="mb-1">Hotéis de 5 estrelas</li>
+                            <li class="mb-1">Guia privado</li>
+                            <li class="mb-1">Cancelamento flexível</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm w-100 mt-auto">Escolher</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- fim da row -->
+    </section>
+
+
+    <!-- ========== PERGUNTAS FREQUENTES (ACCORDION) ========== -->
+    <!-- Tal como no carrossel, não pus container na section para o fundo ir até às bordas -->
+    <!-- bg-body-tertiary: fundo cinzento clarinho -->
+    <!-- py-5: espaço em cima e em baixo -->
+    <section class="bg-body-tertiary py-5">
+
+        <!-- container: centra o conteúdo -->
+        <div class="container">
+
+            <!-- text-center: centra o título -->
+            <!-- fs-4: mesmo tamanho dos outros títulos -->
+            <!-- mb-4: margem em baixo -->
+            <h2 class="text-center fs-4 mb-4">Perguntas frequentes</h2>
+
+            <!-- row: linha da grelha -->
+            <!-- justify-content-center: centra a coluna -->
+            <div class="row justify-content-center">
+                <!-- col-lg-6: em ecrãs grandes ocupa metade da largura, no telemóvel ocupa tudo -->
+                <div class="col-lg-6">
+
+                    <!-- accordion: lista de perguntas que abrem e fecham quando clico -->
+                    <!-- id="perguntasFrequentes": nome do accordion, as respostas usam-no no data-bs-parent -->
+                    <div class="accordion" id="perguntasFrequentes">
+
+                        <!-- Pergunta 1 (esta já aparece aberta) -->
+                        <!-- accordion-item: cada pergunta com a sua resposta -->
+                        <div class="accordion-item">
+
+                            <!-- accordion-header: parte da pergunta (usei h3 porque a secção tem h2) -->
+                            <h3 class="accordion-header">
+                                <!-- accordion-button: a pergunta em que se clica, também desenha a setinha -->
+                                <!-- small: letra mais pequena -->
+                                <!-- data-bs-toggle="collapse": abre e fecha a resposta -->
+                                <!-- data-bs-target="#resposta1": diz qual é a resposta que abre (a que tem id="resposta1") -->
+                                <!-- aria-expanded="true": diz aos leitores de ecrã que a resposta está aberta -->
+                                <button class="accordion-button small" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#resposta1" aria-expanded="true" aria-controls="resposta1">
+                                    Posso pagar em prestações?
+                                </button>
+                            </h3>
+
+                            <!-- id="resposta1": tem de ser igual ao data-bs-target do botão -->
+                            <!-- accordion-collapse collapse: a resposta pode ser escondida -->
+                            <!-- show: a resposta aparece aberta quando a página abre -->
+                            <!-- data-bs-parent: quando abro esta resposta, as outras fecham -->
+                            <div id="resposta1" class="accordion-collapse collapse show"
+                                data-bs-parent="#perguntasFrequentes">
+                                <!-- accordion-body: zona do texto da resposta -->
+                                <!-- small: letra mais pequena -->
+                                <div class="accordion-body small">
+                                    Sim. Dividimos o valor em até 6 prestações, sem juros.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 2 (esta começa fechada) -->
+                        <!-- Diferenças para a pergunta 1: -->
+                        <!-- collapsed: a setinha fica para baixo e o fundo fica branco -->
+                        <!-- aria-expanded="false": a resposta está fechada -->
+                        <!-- a resposta não tem show, por isso começa escondida -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed small" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#resposta2" aria-expanded="false"
+                                    aria-controls="resposta2">
+                                    O que acontece se eu precisar de cancelar?
+                                </button>
+                            </h3>
+                            <div id="resposta2" class="accordion-collapse collapse"
+                                data-bs-parent="#perguntasFrequentes">
+                                <div class="accordion-body small">
+                                    Pode cancelar até 30 dias antes da viagem e recebe o valor de volta. No plano
+                                    Premium, o cancelamento é flexível até mais perto da data.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pergunta 3 (igual à pergunta 2) -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed small" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#resposta3" aria-expanded="false"
+                                    aria-controls="resposta3">
+                                    As crianças pagam o mesmo?
+                                </button>
+                            </h3>
+                            <div id="resposta3" class="accordion-collapse collapse"
+                                data-bs-parent="#perguntasFrequentes">
+                                <div class="accordion-body small">
+                                    Não. Crianças até aos 2 anos não pagam e dos 2 aos 12 anos têm 50% de desconto.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- fim do accordion -->
+
+                </div> <!-- fim da col-lg-6 -->
+            </div> <!-- fim da row -->
+        </div> <!-- fim do container -->
+    </section>
+
+
+    <!-- ========== PEÇA UMA PROPOSTA (FORMULÁRIO) ========== -->
+    <!-- container: centra o conteúdo -->
+    <!-- py-5: espaço em cima e em baixo -->
+    <section class="container py-5">
+
+        <!-- text-center: centra o título -->
+        <!-- fs-4: mesmo tamanho dos outros títulos -->
+        <!-- mb-4: margem em baixo -->
+        <h2 class="text-center fs-4 mb-4">Peça uma proposta</h2>
+
+        <!-- row: linha da grelha -->
+        <!-- justify-content-center: centra o formulário -->
+        <div class="row justify-content-center">
+            <!-- col-lg-6: em ecrãs grandes ocupa metade da largura (igual às perguntas frequentes) -->
+            <div class="col-lg-6">
+
+                <!-- form: formulário, junta os campos e o botão de enviar -->
+                <!-- action="#": para onde iam os dados, ficou # porque ainda não há servidor -->
+                <form action="#">
+
+                    <!-- row: grelha dentro do formulário, para pôr campos lado a lado -->
+                    <!-- g-3: espaço entre os campos -->
+                    <div class="row g-3">
+
+                        <!-- Nome -->
+                        <!-- col-md-6: em ecrãs médios ocupa metade, por isso o Nome e o Email ficam lado a lado -->
+                        <!-- No telemóvel ocupa a largura toda e ficam um por baixo do outro -->
+                        <div class="col-md-6">
+                            <!-- label: texto que diz o que é o campo -->
+                            <!-- for="nome": liga a label ao campo com id="nome", se clicar no texto vai para o campo -->
+                            <!-- form-label: estilo do Bootstrap para labels -->
+                            <!-- small: letra mais pequena -->
+                            <label for="nome" class="form-label small">Nome</label>
+
+                            <!-- type="text": campo para escrever texto -->
+                            <!-- id="nome": tem de ser igual ao for da label -->
+                            <!-- name="nome": nome do dado quando o formulário é enviado -->
+                            <!-- form-control: estilo do Bootstrap para campos (borda e largura toda) -->
+                            <!-- form-control-sm: campo mais pequeno -->
+                            <input type="text" id="nome" name="nome" class="form-control form-control-sm">
+                        </div>
+
+                        <!-- Email -->
+                        <!-- type="email": o browser verifica se é um email (por exemplo se tem @) -->
+                        <!-- e no telemóvel aparece o teclado com o @ -->
+                        <div class="col-md-6">
+                            <label for="email" class="form-label small">Email</label>
+                            <input type="email" id="email" name="email" class="form-control form-control-sm">
+                        </div>
+
+                        <!-- Destino -->
+                        <div class="col-md-6">
+                            <label for="destino" class="form-label small">Destino</label>
+
+                            <!-- select: lista para escolher uma opção -->
+                            <!-- form-select: estilo do Bootstrap para o select (põe a setinha) -->
+                            <!-- form-select-sm: select mais pequeno -->
+                            <select id="destino" name="destino" class="form-select form-select-sm">
+                                <!-- option: cada opção da lista -->
+                                <!-- value: o que é enviado / o texto: o que aparece ao utilizador -->
+                                <option value="porto">Porto</option>
+                                <!-- selected: esta opção já aparece escolhida -->
+                                <option value="lisboa" selected>Lisboa</option>
+                                <option value="alentejo">Alentejo</option>
+                                <option value="algarve">Algarve</option>
+                                <option value="acores">Açores</option>
+                                <option value="madeira">Madeira</option>
+                            </select>
+                        </div>
+
+                        <!-- Número de pessoas -->
+                        <!-- type="number": só aceita números e tem setinhas para subir e descer -->
+                        <!-- value="2": já aparece o 2 escrito -->
+                        <!-- min="1": não deixa pôr menos de 1 -->
+                        <div class="col-md-6">
+                            <label for="pessoas" class="form-label small">Número de pessoas</label>
+                            <input type="number" id="pessoas" name="pessoas" value="2" min="1"
+                                class="form-control form-control-sm">
+                        </div>
+
+                        <!-- Mensagem -->
+                        <!-- col-12: ocupa as 12 partes, ou seja, a largura toda -->
+                        <div class="col-12">
+                            <label for="mensagem" class="form-label small">Mensagem</label>
+
+                            <!-- textarea: caixa para escrever várias linhas -->
+                            <!-- rows="3": tem a altura de 3 linhas -->
+                            <!-- Ao contrário do input, o textarea tem tag de fecho -->
+                            <textarea id="mensagem" name="mensagem" rows="3"
+                                class="form-control form-control-sm"></textarea>
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="col-12">
+                            <!-- form-check: põe a caixinha ao lado do texto -->
+                            <!-- small: letra mais pequena -->
+                            <div class="form-check small">
+                                <!-- type="checkbox": caixinha para marcar -->
+                                <!-- form-check-input: estilo do Bootstrap para a caixinha -->
+                                <input type="checkbox" id="aceito" name="aceito" class="form-check-input">
+                                <!-- form-check-label: estilo do texto ao lado da caixinha -->
+                                <!-- for="aceito": se clicar no texto também marca a caixinha -->
+                                <label for="aceito" class="form-check-label">Aceito ser contactado(a) com a
+                                    proposta</label>
+                            </div>
+                        </div>
+
+                        <!-- Botão de enviar -->
+                        <div class="col-12">
+                            <!-- type="submit": este botão envia o formulário -->
+                            <!-- btn btn-primary: botão azul cheio -->
+                            <!-- w-100: ocupa a largura toda -->
+                            <button type="submit" class="btn btn-primary w-100">Enviar pedido</button>
+                        </div>
+
+                    </div> <!-- fim da row -->
+                </form>
+
+            </div> <!-- fim da col-lg-6 -->
+        </div> <!-- fim da row -->
+    </section>
+
+
+    <!-- ========== RODAPÉ ========== -->
+    <!-- footer: tag para o rodapé da página -->
+    <!-- bg-dark: fundo escuro -->
+    <!-- text-white: texto branco -->
+    <!-- py-5: espaço em cima e em baixo -->
+    <!-- data-bs-theme="dark": usa as cores para fundo escuro, o texto cinzento e a linha <hr> ficam claros -->
+    <footer class="bg-dark text-white py-5" data-bs-theme="dark">
+
+        <!-- container: centra o conteúdo -->
+        <div class="container">
+
+            <!-- row: linha da grelha -->
+            <!-- justify-content-center: centra a coluna -->
+            <div class="row justify-content-center">
+                <!-- col-lg-8: em ecrãs grandes o rodapé ocupa 8 de 12 partes -->
+                <div class="col-lg-8">
+
+                    <!-- row: grelha com as 3 colunas do rodapé -->
+                    <!-- g-4: espaço entre as colunas -->
+                    <div class="row g-4">
+
+                        <!-- Coluna 1: nome da empresa -->
+                        <!-- col-md-4: em ecrãs médios ficam 3 colunas lado a lado, no telemóvel ficam por baixo -->
+                        <div class="col-md-4">
+                            <!-- fs-6: letra pequena -->
+                            <!-- fw-bold: negrito -->
+                            <!-- d-flex: põe a imagem e o texto lado a lado -->
+                            <!-- align-items-center: alinha ao meio -->
+                            <!-- gap-2: espaço entre a imagem e o texto -->
+                            <!-- mb-1: margem pequena em baixo -->
+                            <h2 class="fs-6 fw-bold d-flex align-items-center gap-2 mb-1">
+                                <!-- alt="": vazio porque o nome já está escrito ao lado -->
+                                <img src="../img/aviao-01.png" width="16" alt="">
+                                CESAE Viagens
+                            </h2>
+                            <!-- small: letra mais pequena -->
+                            <!-- text-body-secondary: texto cinzento -->
+                            <p class="small text-body-secondary">Viagens à medida desde 2025.</p>
+                        </div>
+
+                        <!-- Coluna 2: ligações -->
+                        <div class="col-md-4">
+                            <!-- fs-6: letra pequena / fw-bold: negrito / mb-1: margem pequena em baixo -->
+                            <h2 class="fs-6 fw-bold mb-1">Ligações</h2>
+
+                            <!-- list-unstyled: lista sem bolinhas -->
+                            <!-- small: letra mais pequena -->
+                            <ul class="list-unstyled small">
+                                <!-- text-body-secondary: links cinzentos em vez de azuis -->
+                                <!-- text-decoration-none: tira o sublinhado -->
+                                <li><a href="#" class="text-body-secondary text-decoration-none">Planos</a></li>
+                                <li><a href="#" class="text-body-secondary text-decoration-none">Perguntas
+                                        frequentes</a></li>
+                                <li><a href="#" class="text-body-secondary text-decoration-none">Contacto</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Coluna 3: newsletter e redes sociais -->
+                        <div class="col-md-4">
+                            <h2 class="fs-6 fw-bold mb-1">Newsletter</h2>
+
+                            <!-- mb-3: margem em baixo para afastar dos ícones -->
+                            <form action="#" class="mb-3">
+
+                                <!-- input-group: junta o ícone, o campo e o botão numa barra só -->
+                                <!-- input-group-sm: versão mais pequena -->
+                                <div class="input-group input-group-sm">
+
+                                    <!-- input-group-text: caixinha à esquerda onde está o ícone -->
+                                    <span class="input-group-text">
+                                        <!-- bi bi-envelope: ícone do envelope -->
+                                        <!-- aria-hidden="true": os leitores de ecrã ignoram o ícone -->
+                                        <i class="bi bi-envelope" aria-hidden="true"></i>
+                                    </span>
+
+                                    <!-- type="email": campo para o email -->
+                                    <!-- form-control: estilo do campo -->
+                                    <!-- placeholder: texto cinzento que desaparece quando escrevo -->
+                                    <!-- aria-label: como não tem label, isto diz aos leitores de ecrã o que é o campo -->
+                                    <input type="email" name="newsletter" class="form-control"
+                                        placeholder="O seu email" aria-label="O seu email">
+
+                                    <!-- btn btn-warning: botão amarelo (igual ao Reservar) -->
+                                    <button type="submit" class="btn btn-warning">Subscrever</button>
+                                </div>
+                            </form>
+
+                            <!-- Ícones das redes sociais -->
+                            <!-- d-flex: põe os ícones lado a lado -->
+                            <!-- gap-2: espaço entre os ícones -->
+                            <!-- fs-5: ícones maiores (os ícones aumentam com o tamanho da letra) -->
+                            <div class="d-flex gap-2 fs-5">
+                                <!-- text-white: ícone branco (se não fosse isto ficava azul por ser link) -->
+                                <!-- aria-label: o link só tem ícone, por isso o nome vem daqui -->
+                                <a href="#" class="text-white" aria-label="Instagram">
+                                    <!-- bi bi-instagram: ícone do Instagram -->
+                                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="text-white" aria-label="Facebook">
+                                    <i class="bi bi-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="text-white" aria-label="YouTube">
+                                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div> <!-- fim da row das 3 colunas -->
+
+                    <!-- hr: linha a separar -->
+                    <!-- my-4: margem em cima e em baixo -->
+                    <hr class="my-4">
+
+                    <!-- text-center: centra o texto -->
+                    <!-- small: letra mais pequena -->
+                    <!-- text-body-secondary: texto cinzento -->
+                    <!-- mb-0: tira a margem de baixo -->
+                    <!-- &copy;: escreve o símbolo © -->
+                    <p class="text-center small text-body-secondary mb-0">&copy; 2026 CESAE Viagens</p>
+
+                </div> <!-- fim da col-lg-8 -->
+            </div> <!-- fim da row -->
+        </div> <!-- fim do container -->
+    </footer>
+
+
+    <!-- JavaScript do Bootstrap: sem isto o dropdown, o botão ☰, o carrossel e as perguntas não funcionam -->
+    <!-- Pus no fim do body para a página carregar primeiro o conteúdo -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
